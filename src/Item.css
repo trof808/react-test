@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  width: 800px;
+  margin: auto;
+  flex-flow: row wrap;
+}
+.item {
+  width: 27%;
+  border: 1px solid #eee;
+  padding: 15px;
+  margin: 10px auto;
+}
+img.item-img {
+    width: 100%;
+}

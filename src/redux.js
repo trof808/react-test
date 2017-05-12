@@ -18,3 +18,7 @@ export function createStore(reducer, initialState) {
 
   return { getState, dispatch, subscribe };
 }
+
+// export function cartData(reducer, initialState) {
+//
+// }

@@ -1,52 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Counter from './soreComponent';
+import Item from './ItemComponent';
+import App from './heroComponent';
+import Container from './ContainerComponent';
 import './index.css';
-
-const ImageCounter = function(props) {
-  return (
-    <div className="image-counter">
-      <div className="count">{props.count}</div>
-      <img className="image" src={props.imageUrl} onClick={props.onCount} />
-    </div>
-  );
-}
-
-const Hero = React.createClass({
-  getInitialState: function() {
-    return {
-      count: 0
-    }
-  },
-
-  handleClick: function() {
-    this.setState({ count: this.state.count + 1 })
-  },
-
-  render: function() {
-    return (
-      <div className="container">
-        <ImageCounter imageUrl={this.props.imageUrl} count={this.state.count} onCount={this.handleClick} />
-        <h2 onClick={this.handleClick}>{this.props.title}</h2>
-        <p>{this.props.subtitle}</p>
-      </div>
-    )
-  }
-})
-
-const App = React.createClass({
-  render: function() {
-    return (
-      <div>
-        {this.props.heroes.map(function(hero) {
-          return (
-            <Hero key={hero.id} title={hero.title} subtitle={hero.subtitle} imageUrl={hero.imageUrl}/>
-          )
-        })}
-      </div>
-    )
-  }
-})
 
 let data = [
   {
@@ -63,7 +21,42 @@ let data = [
   }
 ]
 
+const items = [
+  {
+    id: 1,
+    name: 'Название',
+    price: 12000
+  },
+  {
+    id: 2,
+    name: 'Название1',
+    price: 15000
+  },
+  {
+    id: 3,
+    name: 'Название2',
+    price: 10000
+  },
+  {
+    id: 4,
+    name: 'Название3',
+    price: 8000
+  },
+  {
+    id: 5,
+    name: 'Название4',
+    price: 7000
+  },
+  {
+    id: 6,
+    name: 'Название5',
+    price: 19000
+  }
+]
+
+
+
 ReactDOM.render(
-  <Counter />,
+  <Container items={items} />,
   document.getElementById('root')
 );
