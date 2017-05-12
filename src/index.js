@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import Counter from './soreComponent';
-import Item from './ItemComponent';
 import App from './heroComponent';
-import Container from './ContainerComponent';
+import Main from './mainComponent/MainComponent';
+
 import './index.css';
 
 let data = [
@@ -21,42 +22,7 @@ let data = [
   }
 ]
 
-const items = [
-  {
-    id: 1,
-    name: 'Название',
-    price: 12000
-  },
-  {
-    id: 2,
-    name: 'Название1',
-    price: 15000
-  },
-  {
-    id: 3,
-    name: 'Название2',
-    price: 10000
-  },
-  {
-    id: 4,
-    name: 'Название3',
-    price: 8000
-  },
-  {
-    id: 5,
-    name: 'Название4',
-    price: 7000
-  },
-  {
-    id: 6,
-    name: 'Название5',
-    price: 19000
-  }
-]
-
-
-
 ReactDOM.render(
-  <Container items={items} />,
+  <Main />,
   document.getElementById('root')
 );

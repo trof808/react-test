@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Item from './ItemComponent';
+import Item from '../itemComponent/ItemComponent';
 
-import './Item.css'
+import '../itemComponent/Item.css'
 
 class Container extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class Container extends React.Component {
       <div className="container">
         {this.props.items.map(item => {
           return (
-            <Item key={item.id} name={item.name} price={item.price} />
+            <Item key={item.id} id={item.id} name={item.name} price={item.price} />
           )
         })}
       </div>
