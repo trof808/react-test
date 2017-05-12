@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Counter from './soreComponent';
 import './index.css';
 
 const ImageCounter = function(props) {
@@ -63,6 +64,6 @@ let data = [
 ]
 
 ReactDOM.render(
-  <App heroes={data}/>,
+  <Counter />,
   document.getElementById('root')
 );
