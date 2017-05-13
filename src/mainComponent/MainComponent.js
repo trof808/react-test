@@ -7,33 +7,33 @@ import Cart from '../cartComponent/CartComponent';
 const items = [
   {
     id: 1,
-    name: 'Название',
-    price: 12000
+    name: 'iphone',
+    price: '12000'
   },
   {
     id: 2,
-    name: 'Название1',
-    price: 15000
+    name: 'ios',
+    price: '15000'
   },
   {
     id: 3,
-    name: 'Название2',
-    price: 10000
+    name: 'mobile',
+    price: '10000'
   },
   {
     id: 4,
-    name: 'Название3',
-    price: 8000
+    name: 'sumsung',
+    price: '8000'
   },
   {
     id: 5,
-    name: 'Название4',
-    price: 7000
+    name: 'sums 200',
+    price: '7000'
   },
   {
     id: 6,
-    name: 'Название5',
-    price: 19000
+    name: 'iph 101',
+    price: '19000'
   }
 ]
 

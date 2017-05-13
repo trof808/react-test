@@ -6,6 +6,16 @@ import './Cart.css';
 class Cart extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = { elems: 0 };
+  }
+
+  componentDidMount() {
+
+  }
+
+  componentWillUnmount() {
+
   }
 
   render() {
@@ -13,7 +23,7 @@ class Cart extends React.Component {
       <div className="cart">
         <div>Корзина</div>
         <div className="cart-items total-pice">25000 рублей</div>
-        <div className="cart-items total-count">Элементов 3</div>
+        <div className="cart-items total-count">Элементов в корзине: {this.state.elems}</div>
         <div className="cart-details"><i className="fa fa-angle-down" aria-hidden="true"></i></div>
         <div className="total-info hidden">
           <ul>
