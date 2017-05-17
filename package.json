@@ -7,9 +7,14 @@
     "react-dom": "^15.5.4"
   },
   "devDependencies": {
-    "react-scripts": "0.9.5"
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "react-scripts": "0.9.5",
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5"
   },
   "scripts": {
+    "webpack": "webpack",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

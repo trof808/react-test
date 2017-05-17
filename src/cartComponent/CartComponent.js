@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import CartItem from '../cartItemComponent/cartItem'
 
 import './Cart.css';
 
@@ -8,32 +8,42 @@ class Cart extends React.Component {
     super(props);
 
     this.state = {
-      cartItems: this.props.cartItems
+      cartItems: this.props.cartItems,
+      cartPrice: this.props.cartPrice,
+      cartItemsHide: true
     };
+
+    this.showCartItems = this.showCartItems.bind(this);
   }
 
-  componentDidMount() {
-
-  }
-
-  componentWillUnmount() {
-
+  showCartItems() {
+    this.setState( (prevState) => {
+      cartItemsHide: !prevState.cartItemsHide
+    })
   }
 
   render() {
+    let cartInfoClass = `total-info`
+    if(this.state.cartItemsHide) cartInfoClass += ' hidden'
+
+    if(this.state.cartItems.length > 0) {
+      var displayCartItems = this.state.cartItems.map(item => (
+        <CartItem key={item.id} name={item.name} price={item.price} />
+      ));
+
+      var content = <div className={cartInfoClass}> <ul>{displayCartItems}</ul> </div>
+    } else {
+      content = <div className={cartInfoClass}>В корзине нет элементов</div>
+    }
+
+
     return (
       <div className="cart">
         <div>Корзина</div>
-        <div className="cart-items total-pice">25000 рублей</div>
+        <div className="cart-items total-pice">{this.state.cartPrice} рублей</div>
         <div className="cart-items total-count">Элементов в корзине: {this.state.cartItems.length}</div>
-        <div className="cart-details"><i className="fa fa-angle-down" aria-hidden="true"></i></div>
-        <div className="total-info hidden">
-          <ul>
-            <li className="cart-prod">Название 1 <span>15000 рублей</span></li>
-            <li className="cart-prod">Название 2 <span>10000 рублей</span></li>
-            <li className="cart-prod">Название 3 <span>8000 рублей</span></li>
-          </ul>
-        </div>
+        <div className="cart-details" onClick={this.showCartItems}><i className="fa fa-angle-down" aria-hidden="true"></i></div>
+        {content}
       </div>
     )
   }

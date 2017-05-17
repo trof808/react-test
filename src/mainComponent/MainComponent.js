@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import Container from '../containerComponent/ContainerComponent';
 import Cart from '../cartComponent/CartComponent';
@@ -10,7 +9,8 @@ class Main extends React.Component {
 
     this.state = {
       items: this.props.items,
-      cartItems: []
+      cartItems: [],
+      cartPrice: 0
     };
 
     this.addToCart = this.addToCart.bind(this);
@@ -25,7 +25,7 @@ class Main extends React.Component {
   render() {
     return (
       <div className="mainPage">
-        <Cart cartItems={this.state.cartItems} />
+        <Cart cartItems={this.state.cartItems} cartPrice={this.state.cartPrice}/>
         <Container items={this.state.items} addToCart={this.addToCart} />
       </div>
     )
