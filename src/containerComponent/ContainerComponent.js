@@ -15,12 +15,17 @@ class Container extends React.Component {
     }
 
     this.handleFilterUpdate = this.handleFilterUpdate.bind(this);
+    this.addToCart = this.addToCart.bind(this);
   }
 
   handleFilterUpdate(filterValue) {
     this.setState({
       nameFilter: filterValue
     })
+  }
+
+  addToCart(id) {
+    this.props.addToCart(id)
   }
 
   render() {
@@ -32,9 +37,9 @@ class Container extends React.Component {
 
     var content;
     if(displayedItems.length > 0) {
-      var items = displayedItems.map(function(item) {
-        return <Item key={item.id} id={item.id} name={item.name} price={item.price} />
-      })
+      var items = displayedItems.map(item => (
+        <Item key={item.id} id={item.id} name={item.name} price={item.price} addToCart={this.addToCart}/>
+      ));
       content = <div className="container">{items}</div>
     } else {
       content = <div className="container">Нет совпадений</div>

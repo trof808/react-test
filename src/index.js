@@ -22,7 +22,40 @@ let data = [
   }
 ]
 
+const items = [
+  {
+    id: 1,
+    name: 'iphone',
+    price: '12000'
+  },
+  {
+    id: 2,
+    name: 'ios',
+    price: '15000'
+  },
+  {
+    id: 3,
+    name: 'mobile',
+    price: '10000'
+  },
+  {
+    id: 4,
+    name: 'sumsung',
+    price: '8000'
+  },
+  {
+    id: 5,
+    name: 'sums 200',
+    price: '7000'
+  },
+  {
+    id: 6,
+    name: 'iph 101',
+    price: '19000'
+  }
+]
+
 ReactDOM.render(
-  <Main />,
+  <Main items={items} />,
   document.getElementById('root')
 );
